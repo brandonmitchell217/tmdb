@@ -11,11 +11,7 @@ export const moviesApi = createApi({
     getMovie: builder.query({
       query: (id: string) => `movie/${id}?api_key=${TMDB_KEY}`,
     }),
-    getPopular: builder.query({
-      query: (type: string) => `${type}/popular?api_key=${TMDB_KEY}`,
-    }),
   }),
 });
 
-export const { useGetTrendingQuery, useGetMovieQuery, useGetPopularQuery } =
-  moviesApi;
+export const { useGetTrendingQuery, useGetMovieQuery } = moviesApi;
