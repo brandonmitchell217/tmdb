@@ -1,13 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import { useGetTrendingQuery } from "@/app/GlobalRedux/api/movieSlice";
-import { useGetTrendingTvSeriesQuery } from "@/app/GlobalRedux/api/tvSlice";
+import { useGetPopularQuery } from "@/app/GlobalRedux/api/popularSlice";
 import CarouselHeader from "../CarouselHeader";
 import MediaCarousel from "../MediaCarousel";
 
-export default function TrendingCarousel({ title, type, filters, id }: any) {
-  const [isFilter, setIsFilter] = useState(filters[0].label);
-  const { data, error, isLoading } = useGetTrendingQuery(isFilter);
+export default function PopularCarousel({ title, filters, id }: any) {
+  const [isFilter, setIsFilter] = useState(filters[0].type);
+  const { data, error, isLoading } = useGetPopularQuery(isFilter);
 
   return (
     <section className="container">
@@ -21,7 +20,7 @@ export default function TrendingCarousel({ title, type, filters, id }: any) {
       {!error && data ? (
         <MediaCarousel
           data={data.results}
-          type={type}
+          type="tv"
           filter={isFilter}
           id={id}
         />

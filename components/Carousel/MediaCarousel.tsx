@@ -17,8 +17,8 @@ export default function MediaCarousel({
 
   useEffect(() => {
     swiperRef.current?.swiper.slideTo(0);
-    console.log(data);
-  }, [filter, data]);
+    //  console.log(data);
+  }, [filter]);
 
   return (
     <div className={className}>

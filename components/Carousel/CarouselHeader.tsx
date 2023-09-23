@@ -14,20 +14,20 @@ export default function CarouselHeader({
 }) {
   return (
     <div className="flex justify-between items-center py-4">
-      <div className="flex gap-4 items-center">
-        <h1 className="text-4xl">{title}</h1>
-        <div className="flex gap-8 items-center">
+      <div className="flex gap-8 items-center">
+        <h2 className="text-4xl capitalize">{title}</h2>
+        <div className="flex gap-4 items-center">
           <button
-            className="bg-green-600 text-white px-8 py-1 rounded-3xl"
-            onClick={() => setIsFilter(filters[0].time)}
+            className="bg-green-600 text-white px-8 py-1 rounded-3xl capitalize"
+            onClick={() => setIsFilter(filters[0].label)}
           >
-            {filters[0].time}
+            {filters[0].label}
           </button>
           <button
-            className="bg-green-300 text-black px-8 py-1 rounded-3xl"
-            onClick={() => setIsFilter(filters[1].time)}
+            className="bg-green-300 text-black px-8 py-1 rounded-3xl capitalize"
+            onClick={() => setIsFilter(filters[1].label)}
           >
-            {filters[1].time}
+            {filters[1].label}
           </button>
         </div>
       </div>

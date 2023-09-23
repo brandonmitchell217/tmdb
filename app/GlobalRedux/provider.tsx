@@ -6,9 +6,5 @@ import { moviesApi } from "./api/movieSlice";
 import { store } from "./store";
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  return (
-    <Provider store={store}>
-      <ApiProvider api={moviesApi}>{children}</ApiProvider>
-    </Provider>
-  );
+  return <Provider store={store}>{children}</Provider>;
 }

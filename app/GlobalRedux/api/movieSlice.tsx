@@ -11,7 +11,11 @@ export const moviesApi = createApi({
     getMovie: builder.query({
       query: (id: string) => `movie/${id}?api_key=${TMDB_KEY}`,
     }),
+    getNowPlaying: builder.query({
+      query: (type: string) => `movie/${type}?api_key=${TMDB_KEY}`,
+    }),
   }),
 });
 
-export const { useGetTrendingQuery, useGetMovieQuery } = moviesApi;
+export const { useGetTrendingQuery, useGetMovieQuery, useGetNowPlayingQuery } =
+  moviesApi;
