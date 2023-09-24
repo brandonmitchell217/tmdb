@@ -3,10 +3,13 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import Image from "next/image";
+import Link from "next/link";
+import Search from "./Home/Search";
 
 export default function NowPlayingCarousel({ data }: any) {
   return (
     <section className="h-[65vh] w-full relative landing">
+      <Search />
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -33,10 +36,10 @@ export default function NowPlayingCarousel({ data }: any) {
               className="object-cover"
               fill={true}
             />
-            <div className="container h-full w-full relative z-10">
-              <h2 className="text-white text-3xl absolute bottom-8 left-8">
+            <div className="container h-full w-full relative z-10 py-8 flex items-end">
+              <Link href={`/movie/${item.id}`} className="text-white text-xl">
                 {item.title}
-              </h2>
+              </Link>
             </div>
           </SwiperSlide>
         ))}

@@ -33,7 +33,18 @@ body {
   z-index: 1;
   height: 100%;
   width: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 50%);
+  background: radial-gradient(
+      circle at bottom,
+      rgba(0, 0, 0, 0.5) 10%,
+      transparent
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(0, 0, 0, 0.75),
+      transparent 50%
+    ),
+    radial-gradient(circle at bottom left, rgba(0, 0, 0, 0.75), transparent 50%),
+    linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 50%);
   background-size: cover;
   background-position: center;
 }
