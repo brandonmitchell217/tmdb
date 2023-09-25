@@ -1,4 +1,5 @@
 export const TMDB_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
+export const TMDB_AUTH = process.env.NEXT_PUBLIC_TMDB_AUTH;
 export const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 
 export const TMDB_BASE_URL = "https://api.themoviedb.org/3/";
