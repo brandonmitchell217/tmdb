@@ -9,7 +9,7 @@ export const tvApi = createApi({
       query: (time: string) => `trending/tv/${time}?api_key=${TMDB_KEY}`,
     }),
     getTvSeries: builder.query({
-      query: (id: string) => `movie/${id}?api_key=${TMDB_KEY}`,
+      query: (id: string) => `tv/${id}?api_key=${TMDB_KEY}`,
     }),
   }),
 });
