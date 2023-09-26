@@ -4,7 +4,7 @@ import React from "react";
 export default function Nav() {
   return (
     <nav className="py-8">
-      <div className="container flex items-center justify-between shadow-md">
+      <div className="container flex items-center justify-between shadow-md px-4 md:px-0">
         <Link href="/" className="text-white font-bold">
           TMDB
           <span className="text-red-400 ml-1">Next</span>

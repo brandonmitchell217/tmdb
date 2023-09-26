@@ -37,10 +37,11 @@ export default function NowPlayingCarousel({ data }: any) {
               fill
               sizes="100vw"
             />
-            <div className="container h-full w-full relative z-10 py-8 flex items-end">
+            <div className="container h-full w-full relative z-10 py-8 flex flex-col justify-end">
               <Link href={`/movie/${item.id}`} className="text-white text-xl">
                 {item.title}
               </Link>
+              <p className="text-white/70">Now Playing</p>
             </div>
           </SwiperSlide>
         ))}

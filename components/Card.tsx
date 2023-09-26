@@ -11,34 +11,28 @@ interface Props {
 // profile_path
 export default function Card({ data, type }: Props) {
   const image = data.poster_path ? data.poster_path : data.backdrop_path;
+
+  // console.log(data);
+
   return (
     <article className="w-full flex flex-col relative group">
       <Link href={`/${type}/${data.id}`} className="relative h-72 xl:h-80">
-        {data.media_type === "person" ? (
-          <Image
-            src={`${IMG_PATH}${data.profile_path}`}
-            alt="person image"
-            fill
-            sizes="100vw"
-            className="rounded-md object-cover"
-          />
-        ) : (
-          <Image
-            src={`${IMG_PATH}${image}`}
-            alt={`${data.title} poster`}
-            fill
-            sizes="100vw"
-            className="rounded-md object-cover"
-          />
-        )}
-
+        <Image
+          src={`${IMG_PATH}${image}`}
+          alt={`${data.title} poster`}
+          fill
+          sizes="100vw"
+          className="rounded-md object-cover"
+        />
         {/* <span className="absolute bottom-2 right-2 bg-black/60 w-10 h-10 text-white flex justify-center items-center text-lg rounded-full">
           {data.vote_average}
         </span> */}
       </Link>
       <div>
         <Link href={`/${type}/${data.id}`}>
-          <h5>{data.title}</h5>
+          <h5>
+            {data.title} {data.id}
+          </h5>
         </Link>
       </div>
     </article>

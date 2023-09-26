@@ -1,14 +1,12 @@
-"use client";
 import React from "react";
-import { useGetPopularPeopleQuery } from "../GlobalRedux/api/personSlice";
+import People from "./_components/People";
 
 export default function PeoplePage() {
-  const { data, error, isLoading } = useGetPopularPeopleQuery("");
-
-  console.log(data);
   return (
-    <div>
-      <h1>jdfsf</h1>
-    </div>
+    <main>
+      <div className="container px-4 md:px-0">
+        <People />
+      </div>
+    </main>
   );
 }
