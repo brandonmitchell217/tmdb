@@ -2,6 +2,7 @@
 import React from "react";
 import { useGetMovieQuery } from "@/app/GlobalRedux/api/movieSlice";
 import { IMG_PATH } from "@/lib/util";
+import Image from "next/image";
 
 export default function MoviePage({ id }: any) {
   const { data, error, isLoading } = useGetMovieQuery(id);
@@ -20,10 +21,11 @@ export default function MoviePage({ id }: any) {
             <h1 className="text-white">{data.title}</h1>
           )}
 
-          <img
+          <Image
             src={IMG_PATH + data.backdrop_path}
             alt="asdasfdf"
-            className="max-w-[500px] h-auto m-auto"
+            width={500}
+            height={750}
           />
           <p>{data.overview}</p>
         </>

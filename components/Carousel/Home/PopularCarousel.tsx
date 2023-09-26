@@ -8,6 +8,8 @@ export default function PopularCarousel({ title, filters, id }: any) {
   const [isFilter, setIsFilter] = useState(filters[0].type);
   const { data, error, isLoading } = useGetPopularQuery(isFilter);
 
+  // console.log(data);
+
   return (
     <section className="container">
       <CarouselHeader

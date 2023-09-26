@@ -11,7 +11,14 @@ export const tvApi = createApi({
     getTvSeries: builder.query({
       query: (id: string) => `tv/${id}?api_key=${TMDB_KEY}`,
     }),
+    discover: builder.query({
+      query: (type: string) => `discover/tv?api_key=${TMDB_KEY}`,
+    }),
   }),
 });
 
-export const { useGetTrendingTvSeriesQuery, useGetTvSeriesQuery } = tvApi;
+export const {
+  useGetTrendingTvSeriesQuery,
+  useGetTvSeriesQuery,
+  useDiscoverQuery,
+} = tvApi;
