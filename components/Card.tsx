@@ -30,9 +30,7 @@ export default function Card({ data, type }: Props) {
       </Link>
       <div>
         <Link href={`/${type}/${data.id}`}>
-          <h5>
-            {data.title} {data.id}
-          </h5>
+          <h5>{data.title}</h5>
         </Link>
       </div>
     </article>
