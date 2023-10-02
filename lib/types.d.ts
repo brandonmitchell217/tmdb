@@ -55,3 +55,30 @@ export interface PersonProps {
   popularity: number;
   profile_path?: string;
 }
+
+export interface PersonDetailsProps {
+  adult: boolean;
+  also_known_as: any[];
+  biography: string;
+  birthday: string;
+  deathday?: string;
+  gender: number;
+  homepage?: string;
+  id: number;
+  imdb_id: string;
+  known_for_department: string;
+  name: string;
+  place_of_birth: string;
+  popularity: number;
+  profile_path?: string;
+}
+
+export interface SocialProps {
+  facebook_id?: string;
+  imdb_id?: string;
+  instagram_id?: string;
+  tiktok_id?: string;
+  twitter_id?: string;
+  wikidata_id?: string;
+  youtube_id?: string;
+}
