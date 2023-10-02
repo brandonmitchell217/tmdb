@@ -22,7 +22,7 @@ export default function PopularCarousel({ title, filters, id }: any) {
       {!error && data ? (
         <MediaCarousel
           data={data.results}
-          type="tv"
+          type={isFilter}
           filter={isFilter}
           id={id}
         />
