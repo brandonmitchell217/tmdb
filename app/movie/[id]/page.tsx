@@ -1,10 +1,14 @@
 import React from "react";
-import MoviePage from "../_components/MoviePage";
+import MovieHeader from "../_components/MovieHeader";
 
-export default function page({ params: { id } }: { params: { id: string } }) {
+export default function MovieIDPage({
+  params: { id },
+}: {
+  params: { id: string };
+}) {
   return (
-    <>
-      <MoviePage id={id} />
-    </>
+    <main>
+      <MovieHeader id={id} />
+    </main>
   );
 }

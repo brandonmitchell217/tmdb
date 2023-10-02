@@ -1,4 +1,5 @@
-import { ChevronLeftCircle, ChevronRightCircle } from "lucide-react";
+import { FaChevronCircleRight as ChevronRightCircle } from "react-icons/fa";
+import { FaChevronCircleLeft as ChevronLeftCircle } from "react-icons/fa";
 import React from "react";
 
 export default function CarouselHeader({
