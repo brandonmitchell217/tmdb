@@ -12,3 +12,6 @@ export async function getTrending(type: string, time: string) {
   );
   return res.json();
 }
+
+export const formatNumber = (num: number) =>
+  !Number.isNaN(Number(num)) ? Number(num).toLocaleString() : num;

@@ -12,7 +12,7 @@ export const searchApi = createApi({
   endpoints: (builder) => ({
     search: builder.query({
       query: (query: string) =>
-        `search/multi?query=${query}&include_adult=false`,
+        `search/multi?query=${query}&include_adult=false&language=en-US`,
     }),
   }),
 });

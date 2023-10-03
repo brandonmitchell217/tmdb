@@ -1,27 +1,28 @@
 "use client";
 import React from "react";
-import { useGetCreditsQuery } from "@/app/GlobalRedux/api/movieSlice";
-import Link from "next/link";
+import { useGetAggCreditsQuery } from "@/app/GlobalRedux/api/tvSlice";
 import Image from "next/image";
 import { IMG_PATH } from "@/lib/util";
 import PersonImgPlaceholder from "@/components/PersonImgPlaceholder";
+import Link from "next/link";
 
-export default function Credits({ id }: any) {
-  const { data, error, isLoading } = useGetCreditsQuery(id);
+export default function AggCredits({ id }: any) {
+  const { data: credits, isError, isLoading } = useGetAggCreditsQuery(id);
 
-  if (error) return null;
+  if (isError) return null;
 
-  const cast = data?.cast;
-  const crew = data?.crew;
+  const cast = credits?.cast;
+  const crew = credits?.crew;
 
-  // console.log(data);
+  console.log(cast, crew);
+
   return (
     <>
       {isLoading ? <span>Loading...</span> : null}
-      <section className="container space-y-12">
+      <div className="container space-y-16">
         <div className="space-y-4">
           <h2 className="font-semibold text-2xl">Cast</h2>
-          <div className="grid grid-cols-5 px-8">
+          <div className="grid grid-cols-5">
             {cast?.slice(0, 5).map((person: any) => (
               <Link
                 key={person.id}
@@ -47,7 +48,7 @@ export default function Credits({ id }: any) {
         </div>
         <div className="space-y-4">
           <h2 className="font-semibold text-2xl">Crew</h2>
-          <div className="grid grid-cols-5 px-8">
+          <div className="grid grid-cols-5">
             {crew?.slice(0, 5).map((person: any) => (
               <div
                 key={person.id}
@@ -69,7 +70,7 @@ export default function Credits({ id }: any) {
             ))}
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 }

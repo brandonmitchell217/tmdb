@@ -1,11 +1,14 @@
 "use client";
 import React from "react";
-import { useDiscoverQuery } from "@/app/GlobalRedux/api/movieSlice";
+import {
+  useDiscoverQuery,
+  useDiscoverTopRatedQuery,
+} from "@/app/GlobalRedux/api/movieSlice";
 import Card from "@/components/Card";
 import { MovieProps } from "@/lib/types";
 
 export default function Movies() {
-  const { data, error, isLoading } = useDiscoverQuery("");
+  const { data, error, isLoading } = useDiscoverTopRatedQuery("");
 
   if (error) return null;
 
