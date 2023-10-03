@@ -1,10 +1,12 @@
 import React from "react";
-import TvPage from "../_components/TvPage";
+import TvHeader from "../_components/TvHeader";
+import AggCredits from "../_components/AggCredits";
 
 export default function Index({ params: { id } }: { params: { id: string } }) {
   return (
-    <div>
-      <TvPage id={id} />
-    </div>
+    <main className="space-y-6">
+      <TvHeader id={id} />
+      <AggCredits id={id} />
+    </main>
   );
 }

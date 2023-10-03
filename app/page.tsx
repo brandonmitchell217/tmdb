@@ -2,6 +2,7 @@ import TrendingCarousel from "@/components/Carousel/Home/TrendingCarousel";
 import TestFetch from "@/components/TestFetch";
 import PopularCarousel from "@/components/Carousel/Home/PopularCarousel";
 import Landing from "@/components/Carousel/Home/Landing";
+import UpcomingCarousel from "@/components/Carousel/Home/UpcomingCarousel";
 
 const trendingFilters = [
   { type: "movie", label: "day" },
@@ -19,6 +20,7 @@ export default function Home() {
       <div className="text-white space-y-20">
         {/* <TestFetch /> */}
         <Landing />
+        <UpcomingCarousel title="Upcoming Movies" id="upcoming_movies" />
         <TrendingCarousel
           title="Trending Movies"
           type="movie"

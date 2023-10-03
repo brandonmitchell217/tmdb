@@ -1,16 +1,19 @@
 "use client";
-import { useGetMovieQuery } from "@/app/GlobalRedux/api/movieSlice";
+import {
+  useGetTvSeriesQuery,
+  useGetAggCreditsQuery,
+} from "@/app/GlobalRedux/api/tvSlice";
 import React from "react";
 import Image from "next/image";
-import { IMG_PATH, formatNumber } from "@/lib/util";
-import Credits from "./Credits";
+import { IMG_PATH } from "@/lib/util";
 
-export default function MovieHeader({ id }: any) {
-  const { data, error, isLoading } = useGetMovieQuery(id);
+export default function TvHeader({ id }: any) {
+  const { data, error, isLoading } = useGetTvSeriesQuery(id);
+  const { data: credits } = useGetAggCreditsQuery(id);
 
   if (error) return null;
 
-  console.log(data);
+  console.log(credits);
 
   return (
     <>
@@ -32,9 +35,11 @@ export default function MovieHeader({ id }: any) {
               </div>
               <div className="flex-1 flex flex-col gap-4">
                 <div>
-                  <h1 className="font-bold text-4xl">{data.title}</h1>
+                  <h1 className="font-bold text-4xl">
+                    {data.name || data.original_name}
+                  </h1>
                   <p className="font-semibold text-white/80 text-lg">
-                    {data.tagline}
+                    {data.type}
                   </p>
                 </div>
                 <div className="space-y-2">
@@ -58,21 +63,29 @@ export default function MovieHeader({ id }: any) {
                   </div>
                   <div>
                     <div className="flex gap-2 items-center">
-                      <h3 className="font-semibold">Release Date:</h3>
-                      <p>{data.release_date}</p>
+                      <h3 className="font-semibold">First Air Date:</h3>
+                      <p>{data.first_air_date}</p>
                     </div>
                     <div className="flex gap-2 items-center">
-                      <h3 className="font-semibold">Budget:</h3>
-                      <p>${formatNumber(data.budget)}</p>
+                      <h3 className="font-semibold">Number of Episodes</h3>
+                      <p>{data.number_of_episodes}</p>
                     </div>
                     <div className="flex gap-2 items-center">
-                      <h3 className="font-semibold">Revenue:</h3>
-                      <p>${formatNumber(data.revenue)}</p>
+                      <h3 className="font-semibold">Number of Seasons</h3>
+                      <p>{data.number_of_seasons}</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* {data.created_by.length > 0 && (
+              <div className="py-8 space-y-2">
+                <h4 className="text-lg font-semibold">Created by</h4>
+
+                <Credits credits={data.created_by} />
+              </div>
+            )} */}
           </div>
         </section>
       )}

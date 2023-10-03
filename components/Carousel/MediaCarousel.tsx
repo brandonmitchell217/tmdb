@@ -12,7 +12,14 @@ export default function MediaCarousel({
   filter,
   className,
   id,
-}: any) {
+}: {
+  title?: any;
+  data: any;
+  type: any;
+  filter?: any;
+  className?: any;
+  id?: any;
+}) {
   const swiperRef = useRef<SwiperRef>(null);
 
   useEffect(() => {

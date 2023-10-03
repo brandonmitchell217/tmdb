@@ -15,22 +15,33 @@ export default function Card({ data, type }: Props) {
   // console.log(data);
 
   return (
-    <article className="w-full flex flex-col relative group">
+    <article className="w-full flex flex-col gap-1 relative group">
       <Link href={`/${type}/${data.id}`} className="relative h-72 xl:h-80">
-        <Image
-          src={`${IMG_PATH}${image}`}
-          alt={`${data.title} poster`}
-          fill
-          sizes="100vw"
-          className="rounded-md object-cover"
-        />
+        {image ? (
+          <Image
+            src={`${IMG_PATH}${image}`}
+            alt={`${data.title} poster`}
+            fill={true}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            placeholder="blur"
+            blurDataURL={`${IMG_PATH}${image}`}
+            className="rounded-md object-cover"
+          />
+        ) : (
+          <div className="h-full w-full relative bg-gray-400 rounded-md flex justify-center items-center">
+            <p className="max-w-[7ch] m-auto text-center font-medium text-gray-700 text-sm">
+              No Image Found
+            </p>
+          </div>
+        )}
+
         {/* <span className="absolute bottom-2 right-2 bg-black/60 w-10 h-10 text-white flex justify-center items-center text-lg rounded-full">
           {data.vote_average}
         </span> */}
       </Link>
       <div>
         <Link href={`/${type}/${data.id}`}>
-          <h5>{data.title}</h5>
+          <h5>{data.title || data.name}</h5>
         </Link>
       </div>
     </article>

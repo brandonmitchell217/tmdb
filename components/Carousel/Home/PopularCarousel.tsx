@@ -1,12 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import { useGetPopularQuery } from "@/app/GlobalRedux/api/popularSlice";
+import {
+  useGetPopularQuery,
+  useGetDiscoverQuery,
+} from "@/app/GlobalRedux/api/popularSlice";
 import CarouselHeader from "../CarouselHeader";
 import MediaCarousel from "../MediaCarousel";
 
 export default function PopularCarousel({ title, filters, id }: any) {
   const [isFilter, setIsFilter] = useState(filters[0].type);
-  const { data, error, isLoading } = useGetPopularQuery(isFilter);
+  const { data, error, isLoading } = useGetDiscoverQuery(isFilter);
 
   // console.log(data);
 
