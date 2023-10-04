@@ -24,8 +24,8 @@ export const moviesApi = createApi({
         `discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_original_language=en`,
     }),
     discoverTopRated: builder.query({
-      query: () =>
-        `discover/movie?include_adult=false&include_video=false&language=en-US&page=1&region=us&sort_by=vote_count.desc`,
+      query: (page: string | number) =>
+        `discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&region=us&sort_by=vote_count.desc`,
     }),
     getCredits: builder.query({
       query: (id: string) => `movie/${id}/credits`,
@@ -44,4 +44,5 @@ export const {
   useGetCreditsQuery,
   useGetUpcomingQuery,
   useDiscoverTopRatedQuery,
+  useLazyDiscoverTopRatedQuery,
 } = moviesApi;
