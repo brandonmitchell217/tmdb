@@ -8,7 +8,7 @@ export default function MoviePage({
   params: { id: string };
 }) {
   return (
-    <main className="space-y-6">
+    <main className="pt-16 space-y-6">
       <MovieHeader id={id} />
       <Credits id={id} />
     </main>

@@ -4,7 +4,7 @@ import AggCredits from "../_components/AggCredits";
 
 export default function Index({ params: { id } }: { params: { id: string } }) {
   return (
-    <main className="space-y-6">
+    <main className="pt-16 space-y-6">
       <TvHeader id={id} />
       <AggCredits id={id} />
     </main>

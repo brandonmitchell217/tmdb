@@ -15,3 +15,5 @@ export async function getTrending(type: string, time: string) {
 
 export const formatNumber = (num: number) =>
   !Number.isNaN(Number(num)) ? Number(num).toLocaleString() : num;
+
+export const dummyArr = Array.from({ length: 7 }, (_, i) => i);
