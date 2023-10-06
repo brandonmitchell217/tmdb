@@ -12,7 +12,7 @@ export default function UpcomingCarousel({ title, id }: any) {
   //   const [isFilter, setIsFilter] = useState(filters[0].type);
   const { data, error, isLoading } = useGetUpcomingQuery("");
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <section className="container">

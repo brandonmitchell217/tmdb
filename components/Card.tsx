@@ -23,8 +23,7 @@ export default function Card({ data, type }: Props) {
             alt={`${data.title} poster`}
             fill={true}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            placeholder="blur"
-            blurDataURL={`${IMG_PATH}${image}`}
+            priority={true}
             className="rounded-md object-cover"
           />
         ) : (

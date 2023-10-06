@@ -9,7 +9,7 @@ export default function TrendingCarousel({ title, type, filters, id }: any) {
   const [isFilter, setIsFilter] = useState(filters[0].label);
   const { data, error, isLoading } = useGetTrendingQuery(isFilter);
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <section className="container">

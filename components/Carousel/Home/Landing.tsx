@@ -9,7 +9,7 @@ export default function Landing() {
   if (error) return null;
 
   return (
-    <section>
+    <section className="pt-24">
       {isLoading ? (
         <span>Loading...</span>
       ) : (

@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Nav() {
   return (
-    <nav className="py-8">
+    <nav className="fixed z-50 top-0 left-0 right-0 py-8 bg-black/80">
       <div className="container flex items-center justify-between shadow-md px-4 md:px-0">
         <Link href="/" className="text-white font-bold">
           TMDB
