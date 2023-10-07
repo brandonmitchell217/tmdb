@@ -23,9 +23,9 @@ export default function AggCredits({ id }: any) {
         <div className="space-y-4">
           <h2 className="font-semibold text-2xl">Cast</h2>
           <div className="grid grid-cols-5">
-            {cast?.slice(0, 5).map((person: any) => (
+            {cast?.slice(0, 5).map((person: any, index: number) => (
               <Link
-                key={person.id}
+                key={index}
                 href={`/people/${person.id}`}
                 className="flex flex-col justify-center items-center"
               >
@@ -49,9 +49,9 @@ export default function AggCredits({ id }: any) {
         <div className="space-y-4">
           <h2 className="font-semibold text-2xl">Crew</h2>
           <div className="grid grid-cols-5">
-            {crew?.slice(0, 5).map((person: any) => (
+            {crew?.slice(0, 5).map((person: any, index: number) => (
               <div
-                key={person.id}
+                key={index}
                 className="flex flex-col justify-center items-center"
               >
                 {person.profile_path ? (

@@ -14,7 +14,8 @@ export const personsApi = createApi({
       query: (id: string) => `person/${id}`,
     }),
     getPopularPeople: builder.query({
-      query: (type: string) => `person/popular?language=en-US`,
+      query: (page: string | number) =>
+        `person/popular?language=en-US&page=${page}`,
     }),
     personSocial: builder.query({
       query: (personId) => ({
@@ -27,5 +28,6 @@ export const personsApi = createApi({
 export const {
   useGetPersonQuery,
   useGetPopularPeopleQuery,
+  useLazyGetPopularPeopleQuery,
   usePersonSocialQuery,
 } = personsApi;

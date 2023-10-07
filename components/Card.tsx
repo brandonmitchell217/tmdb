@@ -16,19 +16,22 @@ export default function Card({ data, type }: Props) {
 
   return (
     <article className="w-full flex flex-col gap-1 relative group">
-      <Link href={`/${type}/${data.id}`} className="relative h-72 xl:h-80">
+      <Link
+        href={`/${type}/${data.id}`}
+        className="relative h-72 xl:h-80 min-w-[240px]"
+      >
         {image ? (
           <Image
             src={`${IMG_PATH}${image}`}
-            alt={`${data.title} poster`}
+            alt={`${data.title || data.name} poster`}
             fill={true}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority={true}
             className="rounded-md object-cover"
           />
         ) : (
-          <div className="h-full w-full relative bg-gray-400 rounded-md flex justify-center items-center">
-            <p className="max-w-[7ch] m-auto text-center font-medium text-gray-700 text-sm">
+          <div className="h-full w-full relative bg-slate-400 text-slate-700 rounded-md flex justify-center items-center">
+            <p className="max-w-[7ch] m-auto text-center font-medium text-sm">
               No Image Found
             </p>
           </div>

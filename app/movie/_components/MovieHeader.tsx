@@ -26,7 +26,7 @@ export default function MovieHeader({ id }: any) {
                   alt={`${data.title} poster`}
                   width={300}
                   height={450}
-                  className="rounded-xl"
+                  className="rounded-md"
                   priority={true}
                 />
               </div>
@@ -45,11 +45,11 @@ export default function MovieHeader({ id }: any) {
                 <div className="py-4 space-y-4">
                   <div>
                     <h3 className="font-semibold text-lg">Genres:</h3>
-                    <ul className="flex gap-2">
+                    <ul className="flex gap-1">
                       {data.genres.map((genre: any) => (
                         <li
                           key={genre.id}
-                          className="bg-white/80 rounded-full text-black text-sm px-4 py-1"
+                          className="bg-white/80 rounded-full text-black text-[12px] px-4 py-1"
                         >
                           {genre.name}
                         </li>
