@@ -29,6 +29,7 @@ export default function PersonPage({ id }: any) {
               alt={`${person.name} profile image`}
               width={300}
               height={450}
+              className="rounded-md"
             />
           </div>
           <div className="flex-1 space-y-3">

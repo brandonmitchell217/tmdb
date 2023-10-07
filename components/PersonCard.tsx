@@ -12,7 +12,10 @@ interface Props {
 export default function PersonCard({ data, type }: Props) {
   return (
     <article className="w-full flex flex-col relative group">
-      <Link href={`/people/${data.id}`} className="relative h-72 xl:h-80">
+      <Link
+        href={`/people/${data.id}`}
+        className="relative h-72 xl:h-80 min-w-[240px]"
+      >
         {data.profile_path ? (
           <Image
             src={`${IMG_PATH}${data.profile_path}`}

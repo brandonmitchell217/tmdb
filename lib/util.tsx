@@ -16,4 +16,12 @@ export async function getTrending(type: string, time: string) {
 export const formatNumber = (num: number) =>
   !Number.isNaN(Number(num)) ? Number(num).toLocaleString() : num;
 
-export const dummyArr = Array.from({ length: 7 }, (_, i) => i);
+export const dummyArr = Array.from({ length: 12 }, (_, i) => i);
+
+export function createArrayWithMax(maxNumber: number) {
+  if (maxNumber < 1) {
+    return [];
+  }
+
+  return Array.from({ length: maxNumber }, (_, index) => index + 1);
+}

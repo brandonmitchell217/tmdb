@@ -21,8 +21,8 @@ export const tvApi = createApi({
         `discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&with_original_language=en`,
     }),
     getTopRated: builder.query({
-      query: () =>
-        `discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=vote_count.desc&watch_region=us`,
+      query: (page: string | number) =>
+        `discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=${page}&sort_by=vote_count.desc&watch_region=us`,
     }),
     getAggCredits: builder.query({
       query: (id: string) => `tv/${id}/aggregate_credits?language=en-US`,
@@ -35,5 +35,6 @@ export const {
   useGetTvSeriesQuery,
   useDiscoverQuery,
   useGetTopRatedQuery,
+  useLazyGetTopRatedQuery,
   useGetAggCreditsQuery,
 } = tvApi;

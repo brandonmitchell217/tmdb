@@ -14,7 +14,8 @@ export default function Credits({ id }: any) {
   const cast = data?.cast;
   const crew = data?.crew;
 
-  // console.log(data);
+  console.log(cast, crew);
+
   return (
     <>
       {isLoading ? <span>Loading...</span> : null}
@@ -22,9 +23,9 @@ export default function Credits({ id }: any) {
         <div className="space-y-4">
           <h2 className="font-semibold text-2xl">Cast</h2>
           <div className="grid grid-cols-5 px-8">
-            {cast?.slice(0, 5).map((person: any) => (
+            {cast?.slice(0, 5).map((person: any, index: number) => (
               <Link
-                key={person.id}
+                key={index}
                 href={`/people/${person.id}`}
                 className="flex flex-col justify-center items-center"
               >
@@ -48,9 +49,9 @@ export default function Credits({ id }: any) {
         <div className="space-y-4">
           <h2 className="font-semibold text-2xl">Crew</h2>
           <div className="grid grid-cols-5 px-8">
-            {crew?.slice(0, 5).map((person: any) => (
+            {crew?.slice(0, 5).map((person: any, index: number) => (
               <div
-                key={person.id}
+                key={index}
                 className="flex flex-col justify-center items-center"
               >
                 {person.profile_path ? (
@@ -65,6 +66,7 @@ export default function Credits({ id }: any) {
                   <PersonImgPlaceholder className="w-[150px] h-[150px] rounded-full" />
                 )}
                 <p className="text-lg">{person.name || person.original_name}</p>
+                <p className="text-sm">{person.job}</p>
               </div>
             ))}
           </div>
