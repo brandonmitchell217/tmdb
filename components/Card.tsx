@@ -18,7 +18,7 @@ export default function Card({ data, type }: Props) {
     <article className="w-full flex flex-col gap-1 relative group">
       <Link
         href={`/${type}/${data.id}`}
-        className="relative h-72 xl:h-80 min-w-[240px]"
+        className="relative h-72 xl:h-80 max-w-[240px]"
       >
         {image ? (
           <Image
