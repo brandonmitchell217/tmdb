@@ -65,7 +65,7 @@ export default function Shows() {
             </div>
           ))}
         {shows.map((show: TvResultsProps) => (
-          <div key={show.id}>
+          <div key={show.id} className="min-w-[240px]">
             <Card data={show} type="tv" />
           </div>
         ))}
