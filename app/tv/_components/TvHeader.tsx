@@ -6,6 +6,7 @@ import {
 import React from "react";
 import Image from "next/image";
 import { IMG_PATH } from "@/lib/util";
+import { BiLoader } from "react-icons/bi";
 
 export default function TvHeader({ id }: any) {
   const { data, error, isLoading } = useGetTvSeriesQuery(id);
@@ -18,7 +19,14 @@ export default function TvHeader({ id }: any) {
   return (
     <>
       {isLoading ? (
-        <span>Loading...</span>
+        <div className="h-[60vh] w-full flex gap-14">
+          <div className="h-[450px] w-[300px] flex justify-center items-center">
+            <BiLoader size={50} className="animate-spin-slow" />
+          </div>
+          <div className="h-full w-full flex items-center justify-center">
+            <BiLoader size={50} className="animate-spin-slow" />
+          </div>
+        </div>
       ) : (
         <section className="py-16">
           <div className="container">

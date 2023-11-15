@@ -5,6 +5,7 @@ import { PersonDetailsProps } from "@/lib/types";
 import Image from "next/image";
 import { IMG_PATH, personPlaceHolder } from "@/lib/util";
 import PersonSocial from "./PersonSocial";
+import { BiLoader } from "react-icons/bi";
 
 export default function PersonPage({ id }: any) {
   const { data, error, isLoading } = useGetPersonQuery(id);
@@ -16,7 +17,14 @@ export default function PersonPage({ id }: any) {
   return (
     <section>
       {isLoading ? (
-        <span>Loading...</span>
+        <div className="h-[60vh] w-full flex gap-14">
+          <div className="h-[450px] w-[300px] flex justify-center items-center">
+            <BiLoader size={50} className="animate-spin-slow" />
+          </div>
+          <div className="h-full w-full flex items-center justify-center">
+            <BiLoader size={50} className="animate-spin-slow" />
+          </div>
+        </div>
       ) : (
         <div className="flex gap-14">
           <div>
