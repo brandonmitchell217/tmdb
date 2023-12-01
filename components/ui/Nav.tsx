@@ -1,10 +1,13 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
+import NavMenu from "./NavMenu";
+import { FaBars } from "react-icons/fa6";
 
 export default function Nav() {
   const { data: session } = useSession();
+  const [showMenu, setShowMenu] = useState(false);
 
   if (session) {
     return (
@@ -15,21 +18,18 @@ export default function Nav() {
             <span className="text-red-400 ml-1">Next</span>
           </Link>
 
-          <div className="flex items-center space-x-8">
-            <ul className="flex gap-6 items-center font-medium">
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/movies">Movies</Link>
-              </li>
-              <li>
-                <Link href="/tvShows">TV Shows</Link>
-              </li>
-              <li>
-                <Link href="/people">People</Link>
-              </li>
-            </ul>
+          {/* Menu Icon/Button */}
+          <button
+            type="button"
+            className="text-white text-2xl md:hidden relative z-50"
+            onClick={() => setShowMenu(!showMenu)}
+          >
+            <FaBars />
+          </button>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            <NavMenu />
 
             <div className="flex items-center gap-2">
               {session.user?.image ? (
@@ -41,7 +41,34 @@ export default function Nav() {
               ) : (
                 <div className="w-7 h-7 bg-slate-400 rounded-full"></div>
               )}
+              <button
+                className="px-4 py-1 bg-red-400 text-black rounded-md"
+                type="button"
+                onClick={() => signOut()}
+              >
+                Sign Out
+              </button>
+            </div>
+          </div>
 
+          {/* Mobile Menu */}
+          <div
+            className={`absolute -z-10 left-0 right-0 -top-[350%] bg-black/80 pt-12 pb-8 flex flex-col items-center gap-6 transition-transform ${
+              showMenu ? "translate-y-[130%]" : null
+            }`}
+          >
+            <NavMenu />
+
+            <div className="flex items-center gap-2">
+              {session.user?.image ? (
+                <img
+                  src={session.user?.image}
+                  alt={`${session.user?.name} profile image`}
+                  className="w-7 h-7 rounded-full"
+                />
+              ) : (
+                <div className="w-7 h-7 bg-slate-400 rounded-full"></div>
+              )}
               <button
                 className="px-4 py-1 bg-red-400 text-black rounded-md"
                 type="button"
@@ -63,21 +90,8 @@ export default function Nav() {
           <span className="text-red-400 ml-1">Next</span>
         </Link>
 
-        <div className="flex items-center space-x-8">
-          <ul className="flex gap-6 items-center font-medium">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/movies">Movies</Link>
-            </li>
-            <li>
-              <Link href="/tvShows">TV Shows</Link>
-            </li>
-            <li>
-              <Link href="/people">People</Link>
-            </li>
-          </ul>
+        <div className="hidden md:flex items-center space-x-8">
+          <NavMenu />
 
           <div>
             <button

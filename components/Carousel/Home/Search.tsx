@@ -12,8 +12,8 @@ export default function Search() {
   //     setQuery(e.currentTarget.query.value);
   //   };
   return (
-    <div className="bg-black/60 rounded-xl p-8 flex flex-col justify-center items-center gap-4 absolute z-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <h1 className="text-4xl text-white capitalize max-w-[70%] m-auto text-center">
+    <div className="min-w-[300px] bg-black/60 rounded-xl p-4 md:p-8 flex flex-col justify-center items-center gap-4 absolute z-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <h1 className="text-4xl text-white capitalize md:max-w-[70%] m-auto text-center">
         Browse for movies, shows or people
       </h1>
 

@@ -35,7 +35,7 @@ export default function CarouselHeader({
           </div>
         ) : null}
       </div>
-      <div className="space-x-1">
+      <div className="hidden md:block space-x-1">
         <button id={`prev-${id}`} className="btn-icon btn-secondary">
           <ChevronLeftCircle className="text-2xl" />
         </button>
