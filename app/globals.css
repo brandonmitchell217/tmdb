@@ -16,41 +16,53 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))
+      )
+      rgb(var(--background-start-rgb));
+  }
+
+  .container {
+    @apply pl-4 lg:pl-0;
+  }
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  height: 100%;
-  width: 100%;
-  background: radial-gradient(
-      circle at bottom,
-      rgba(0, 0, 0, 0.5) 10%,
-      transparent
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(0, 0, 0, 0.75),
-      transparent 50%
-    ),
-    radial-gradient(circle at bottom left, rgba(0, 0, 0, 0.75), transparent 50%),
-    linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 50%);
-  background-size: cover;
-  background-position: center;
-}
+@layer components {
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(
+        circle at bottom,
+        rgba(0, 0, 0, 0.5) 10%,
+        transparent
+      ),
+      radial-gradient(
+        circle at bottom right,
+        rgba(0, 0, 0, 0.75),
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at bottom left,
+        rgba(0, 0, 0, 0.75),
+        transparent 50%
+      ),
+      linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 50%);
+    background-size: cover;
+    background-position: center;
+  }
 
-.myGrid {
-  display: grid;
-  gap: 8px;
-  grid-template-columns: repeat(auto-fit, minmax(203px, auto));
+  .myGrid {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(203px, auto));
+  }
 }

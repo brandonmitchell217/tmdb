@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { getServerSession } from "next-auth";
 import { Providers } from "./GlobalRedux/provider";
-import Nav from "@/components/Nav";
+import Nav from "@/components/ui/Nav";
 import SessionProvider from "@/components/SessionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
