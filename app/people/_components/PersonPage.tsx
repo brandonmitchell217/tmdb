@@ -7,7 +7,7 @@ import { IMG_PATH, personPlaceHolder } from "@/lib/util";
 import PersonSocial from "./PersonSocial";
 import { BiLoader } from "react-icons/bi";
 
-export default function PersonPage({ id }: any) {
+export default function PersonPage({ id }: { id: string }) {
   const { data, error, isLoading } = useGetPersonQuery(id);
 
   const person = data as PersonDetailsProps;

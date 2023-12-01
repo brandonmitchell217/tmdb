@@ -8,7 +8,7 @@ import {
   FaTwitterSquare,
 } from "react-icons/fa";
 
-export default function PersonSocial({ id }: any) {
+export default function PersonSocial({ id }: { id: string }) {
   const { data, error, isLoading, isSuccess } = usePersonSocialQuery(id);
 
   if (error) return null;

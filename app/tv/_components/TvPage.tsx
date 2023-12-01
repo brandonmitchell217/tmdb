@@ -4,10 +4,12 @@ import Image from "next/image";
 import { useGetTvSeriesQuery } from "@/app/GlobalRedux/api/tvSlice";
 import { IMG_PATH } from "@/lib/util";
 
-export default function TvPage({ id }: any) {
+export default function TvPage({ id }: { id: string }) {
   const { data, error, isLoading } = useGetTvSeriesQuery(id);
 
-  console.log(data);
+  if (error) return null;
+
+  // console.log(data);
 
   return (
     <div className="text-white">

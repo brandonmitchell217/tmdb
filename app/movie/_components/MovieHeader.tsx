@@ -5,13 +5,14 @@ import Image from "next/image";
 import { IMG_PATH, formatNumber } from "@/lib/util";
 import Credits from "./Credits";
 import { BiLoader } from "react-icons/bi";
+import { GenreProps } from "@/lib/types";
 
-export default function MovieHeader({ id }: any) {
+export default function MovieHeader({ id }: { id: string }) {
   const { data, error, isLoading } = useGetMovieQuery(id);
 
   if (error) return null;
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <>
@@ -54,7 +55,7 @@ export default function MovieHeader({ id }: any) {
                   <div>
                     <h3 className="font-semibold text-lg">Genres:</h3>
                     <ul className="flex gap-1">
-                      {data.genres.map((genre: any) => (
+                      {data.genres.map((genre: GenreProps) => (
                         <li
                           key={genre.id}
                           className="bg-white/80 rounded-full text-black text-[12px] px-4 py-1"

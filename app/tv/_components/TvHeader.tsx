@@ -7,14 +7,15 @@ import React from "react";
 import Image from "next/image";
 import { IMG_PATH } from "@/lib/util";
 import { BiLoader } from "react-icons/bi";
+import { GenreProps } from "@/lib/types";
 
-export default function TvHeader({ id }: any) {
+export default function TvHeader({ id }: { id: string }) {
   const { data, error, isLoading } = useGetTvSeriesQuery(id);
   const { data: credits } = useGetAggCreditsQuery(id);
 
   if (error) return null;
 
-  console.log(credits);
+  // console.log(credits);
 
   return (
     <>
@@ -59,7 +60,7 @@ export default function TvHeader({ id }: any) {
                   <div>
                     <h3 className="font-semibold text-lg">Genres:</h3>
                     <ul className="flex gap-1">
-                      {data.genres.map((genre: any) => (
+                      {data.genres.map((genre: GenreProps) => (
                         <li
                           key={genre.id}
                           className="bg-white/80 rounded-full text-black text-[12px] px-4 py-1"

@@ -5,8 +5,9 @@ import { Autoplay, Navigation } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
 import Search from "./Home/Search";
+import { MovieProps } from "@/lib/types";
 
-export default function NowPlayingCarousel({ data }: any) {
+export default function NowPlayingCarousel({ data }: { data: MovieProps[] }) {
   return (
     <section className="h-[65vh] w-full relative landing">
       <Search />
@@ -24,7 +25,7 @@ export default function NowPlayingCarousel({ data }: any) {
         modules={[Autoplay, Navigation]}
         className="mySwiper relative h-full w-full"
       >
-        {data.slice(0, 5).map((item: any) => (
+        {data.slice(0, 5).map((item: MovieProps) => (
           <SwiperSlide
             key={item.id}
             className="relative flex justify-end items-end"

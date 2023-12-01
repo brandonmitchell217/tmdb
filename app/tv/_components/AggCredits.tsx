@@ -6,8 +6,9 @@ import { IMG_PATH } from "@/lib/util";
 import PersonImgPlaceholder from "@/components/PersonImgPlaceholder";
 import Link from "next/link";
 import { BiLoader } from "react-icons/bi";
+import { PersonProps } from "@/lib/types";
 
-export default function AggCredits({ id }: any) {
+export default function AggCredits({ id }: { id: string }) {
   const { data: credits, isError, isLoading } = useGetAggCreditsQuery(id);
 
   if (isError) return null;
@@ -30,7 +31,7 @@ export default function AggCredits({ id }: any) {
           <div className="space-y-4">
             <h2 className="font-semibold text-2xl">Cast</h2>
             <div className="grid grid-cols-5">
-              {cast?.slice(0, 5).map((person: any, index: number) => (
+              {cast?.slice(0, 5).map((person: PersonProps, index: number) => (
                 <Link
                   key={index}
                   href={`/people/${person.id}`}
@@ -58,7 +59,7 @@ export default function AggCredits({ id }: any) {
           <div className="space-y-4">
             <h2 className="font-semibold text-2xl">Crew</h2>
             <div className="grid grid-cols-5">
-              {crew?.slice(0, 5).map((person: any, index: number) => (
+              {crew?.slice(0, 5).map((person: PersonProps, index: number) => (
                 <div
                   key={index}
                   className="flex flex-col justify-center items-center"
