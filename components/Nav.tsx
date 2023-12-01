@@ -31,7 +31,17 @@ export default function Nav() {
               </li>
             </ul>
 
-            <div>
+            <div className="flex items-center gap-2">
+              {session.user?.image ? (
+                <img
+                  src={session.user?.image}
+                  alt={`${session.user?.name} profile image`}
+                  className="w-7 h-7 rounded-full"
+                />
+              ) : (
+                <div className="w-7 h-7 bg-slate-400 rounded-full"></div>
+              )}
+
               <button
                 className="px-4 py-1 bg-red-400 text-black rounded-md"
                 type="button"

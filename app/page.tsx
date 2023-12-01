@@ -24,17 +24,15 @@ export default async function Home() {
         <Landing />
 
         {session?.user?.name ? (
-          <div className="container ">
-            <div className="space-y-2 text-center">
-              <h1 className="text-4xl font-bold">
-                Welcome {session?.user?.name}
-              </h1>
-              <p>Find new movies or shows!</p>
-            </div>
+          <div className="container space-y-2 text-center">
+            <h1 className="text-4xl font-bold">
+              Welcome {session?.user?.name}
+            </h1>
+            <p>Find new movies or shows!</p>
           </div>
         ) : (
-          <div className="container">
-            <h1 className="text-4xl font-bold text-center">Welcome</h1>
+          <div className="container space-y-2 text-center">
+            <h1 className="text-4xl font-bold ">Welcome</h1>
             <p>You should sign in!</p>
           </div>
         )}
