@@ -3,12 +3,17 @@ import Image from "next/image";
 import React from "react";
 import { IMG_PATH } from "@/lib/util";
 import PersonImgPlaceholder from "@/components/PersonImgPlaceholder";
+import { PersonDetailsProps } from "@/lib/types";
 
-export default function Credits({ credits }: any) {
+export default function Credits({
+  credits,
+}: {
+  credits: PersonDetailsProps[];
+}) {
   // console.log(credits);
   return (
     <div className="flex gap-4 items-center">
-      {credits.map((person: any) => (
+      {credits.map((person: PersonDetailsProps) => (
         <Link
           key={person.id}
           href={`/people/${person.id}`}

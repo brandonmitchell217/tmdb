@@ -10,10 +10,15 @@ export interface DataProps {
   total_results?: number;
 }
 
+export interface GenreProps {
+  id: number;
+  name: string;
+}
+
 export interface MovieProps {
   adult: boolean;
   backdrop_path?: string;
-  genre_ids: any[];
+  genre_ids: GenreProps[];
   id: number;
   original_language: string;
   original_title: string;
@@ -54,6 +59,7 @@ export interface PersonProps {
   original_name: string;
   popularity: number;
   profile_path?: string;
+  job?: string;
 }
 
 export interface PersonDetailsProps {

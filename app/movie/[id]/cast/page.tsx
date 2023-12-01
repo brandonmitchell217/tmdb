@@ -2,6 +2,7 @@
 import React from "react";
 import { useGetCreditsQuery } from "@/app/GlobalRedux/api/movieSlice";
 import Link from "next/link";
+import { PersonProps } from "@/lib/types";
 
 export default function CastPage({
   params: { id },
@@ -15,7 +16,7 @@ export default function CastPage({
 
   if (error) return null;
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <>
@@ -25,7 +26,7 @@ export default function CastPage({
           <div className="space-y-4">
             <h2 className="text-xl font-bold">Cast:</h2>
             <ul className="flex flex-col gap-2">
-              {cast.map((person: any) => (
+              {cast.map((person: PersonProps) => (
                 <li key={person.id}>
                   <Link href={`/people/${person.id}`}>{person.name}</Link>
                 </li>
@@ -35,7 +36,7 @@ export default function CastPage({
           <div className="space-y-4">
             <h3 className="text-xl font-bold">Crew:</h3>
             <ul className="flex flex-col gap-2">
-              {crew.map((person: any) => (
+              {crew.map((person: PersonProps) => (
                 <li key={person.id}>
                   <Link href={`/people/${person.id}`}>{person.name}</Link>
                 </li>

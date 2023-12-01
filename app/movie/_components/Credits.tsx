@@ -6,8 +6,9 @@ import Image from "next/image";
 import { IMG_PATH } from "@/lib/util";
 import PersonImgPlaceholder from "@/components/PersonImgPlaceholder";
 import { BiLoader } from "react-icons/bi";
+import { PersonProps } from "@/lib/types";
 
-export default function Credits({ id }: any) {
+export default function Credits({ id }: { id: string }) {
   const { data, error, isLoading } = useGetCreditsQuery(id);
 
   if (error) return null;
@@ -15,7 +16,7 @@ export default function Credits({ id }: any) {
   const cast = data?.cast;
   const crew = data?.crew;
 
-  console.log(cast, crew);
+  // console.log(cast, crew);
 
   return (
     <>
@@ -30,7 +31,7 @@ export default function Credits({ id }: any) {
           <div className="space-y-4">
             <h2 className="font-semibold text-2xl">Cast</h2>
             <div className="grid grid-cols-5 px-8">
-              {cast?.slice(0, 5).map((person: any, index: number) => (
+              {cast?.slice(0, 5).map((person: PersonProps, index: number) => (
                 <Link
                   key={index}
                   href={`/people/${person.id}`}
@@ -58,7 +59,7 @@ export default function Credits({ id }: any) {
           <div className="space-y-4">
             <h2 className="font-semibold text-2xl">Crew</h2>
             <div className="grid grid-cols-5 px-8">
-              {crew?.slice(0, 5).map((person: any, index: number) => (
+              {crew?.slice(0, 5).map((person: PersonProps, index: number) => (
                 <div
                   key={index}
                   className="flex flex-col justify-center items-center"
