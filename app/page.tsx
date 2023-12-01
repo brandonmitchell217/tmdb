@@ -1,5 +1,4 @@
 import TrendingCarousel from "@/components/Carousel/Home/TrendingCarousel";
-import TestFetch from "@/components/TestFetch";
 import PopularCarousel from "@/components/Carousel/Home/PopularCarousel";
 import Landing from "@/components/Carousel/Home/Landing";
 import UpcomingCarousel from "@/components/Carousel/Home/UpcomingCarousel";
@@ -20,7 +19,6 @@ export default async function Home() {
   return (
     <main className="pb-20">
       <div className="text-white space-y-20">
-        {/* <TestFetch /> */}
         <Landing />
 
         {session?.user?.name ? (
