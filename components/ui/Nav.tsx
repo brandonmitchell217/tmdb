@@ -7,7 +7,7 @@ import { FaBars } from "react-icons/fa6";
 
 export default function Nav() {
   const { data: session } = useSession();
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState<boolean>(false);
 
   if (session) {
     return (

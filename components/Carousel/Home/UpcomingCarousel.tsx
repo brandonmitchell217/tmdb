@@ -10,7 +10,13 @@ import MediaCarousel from "../MediaCarousel";
 import { dummyArr } from "@/lib/util";
 import CardSkeleton from "@/components/Media/CardSkeleton";
 
-export default function UpcomingCarousel({ title, id }: any) {
+export default function UpcomingCarousel({
+  title,
+  id,
+}: {
+  title: string;
+  id: string;
+}) {
   //   const [isFilter, setIsFilter] = useState(filters[0].type);
   const { data, error, isLoading } = useGetUpcomingQuery("");
 

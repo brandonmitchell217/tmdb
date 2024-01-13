@@ -3,6 +3,7 @@ import { IMG_PATH } from "@/lib/util";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FaPlus } from "react-icons/fa";
 
 interface Props {
   data: DataProps["results"];
@@ -16,6 +17,13 @@ export default function Card({ data, type }: Props) {
 
   return (
     <article className="w-full flex flex-col gap-1 relative group">
+      <button
+        type="button"
+        className="absolute top-2 right-2 z-30 p-2 rounded-full text-2xl bg-black/80 text-white "
+      >
+        <FaPlus />
+      </button>
+
       <Link
         href={`/${type}/${data.id}`}
         className="relative h-72 xl:h-80 max-w-[240px]"

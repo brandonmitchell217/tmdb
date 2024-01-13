@@ -6,9 +6,20 @@ import CarouselHeader from "../CarouselHeader";
 import MediaCarousel from "../MediaCarousel";
 import { dummyArr } from "@/lib/util";
 import CardSkeleton from "@/components/Media/CardSkeleton";
+import { FilterProps } from "@/lib/types";
 
-export default function TrendingCarousel({ title, type, filters, id }: any) {
-  const [isFilter, setIsFilter] = useState(filters[0].label);
+export default function TrendingCarousel({
+  title,
+  type,
+  filters,
+  id,
+}: {
+  title: string;
+  type: string;
+  filters: FilterProps[];
+  id: string;
+}) {
+  const [isFilter, setIsFilter] = useState<string>(filters[0].label);
   const { data, error, isLoading } = useGetTrendingQuery(isFilter);
 
   // console.log(data);

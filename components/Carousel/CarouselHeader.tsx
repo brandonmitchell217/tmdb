@@ -1,6 +1,7 @@
 import { FaChevronCircleRight as ChevronRightCircle } from "react-icons/fa";
 import { FaChevronCircleLeft as ChevronLeftCircle } from "react-icons/fa";
 import React from "react";
+import { FilterProps } from "@/lib/types";
 
 export default function CarouselHeader({
   title,
@@ -9,9 +10,9 @@ export default function CarouselHeader({
   id,
 }: {
   title: string;
-  filters?: any;
+  filters?: FilterProps[] | any;
   setIsFilter?: any;
-  id: any;
+  id: string;
 }) {
   return (
     <div className="flex justify-between items-center py-4">

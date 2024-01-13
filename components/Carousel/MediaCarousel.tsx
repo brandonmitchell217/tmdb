@@ -4,6 +4,7 @@ import { Navigation, Keyboard } from "swiper/modules";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { mediaBreakpoints } from "@/lib/breakpoints";
 import Card from "../Card";
+import { DataProps, FilterProps } from "@/lib/types";
 
 export default function MediaCarousel({
   title,
@@ -13,18 +14,17 @@ export default function MediaCarousel({
   className,
   id,
 }: {
-  title?: any;
-  data: any;
-  type: any;
+  title?: string;
+  data: DataProps["results"];
+  type: string;
   filter?: any;
-  className?: any;
-  id?: any;
+  className?: string;
+  id?: string;
 }) {
   const swiperRef = useRef<SwiperRef>(null);
 
   useEffect(() => {
     swiperRef.current?.swiper.slideTo(0);
-    //  console.log(data);
   }, [filter]);
 
   return (
@@ -36,7 +36,7 @@ export default function MediaCarousel({
         navigation={{ nextEl: `#next-${id}`, prevEl: `#prev-${id}` }}
         keyboard
       >
-        {data.map((item: any) => (
+        {data.map((item: DataProps["results"]) => (
           <SwiperSlide key={item.id}>
             <Card data={item} type={type} />
             {/* <span>{item.title}</span> */}
