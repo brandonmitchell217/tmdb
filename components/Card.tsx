@@ -17,12 +17,12 @@ export default function Card({ data, type }: Props) {
 
   return (
     <article className="w-full flex flex-col gap-1 relative group">
-      <button
+      {/* <button
         type="button"
         className="absolute top-2 right-2 z-30 p-2 rounded-full text-2xl bg-black/80 text-white "
       >
         <FaPlus />
-      </button>
+      </button> */}
 
       <Link
         href={`/${type}/${data.id}`}
