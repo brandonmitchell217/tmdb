@@ -3,13 +3,14 @@ import PopularCarousel from "@/components/Carousel/Home/PopularCarousel";
 import Landing from "@/components/Carousel/Home/Landing";
 import UpcomingCarousel from "@/components/Carousel/Home/UpcomingCarousel";
 import { getServerSession } from "next-auth";
+import { FilterProps } from "@/lib/types";
 
-const trendingFilters = [
+const trendingFilters: FilterProps[] = [
   { type: "movie", label: "day" },
   { type: "movie", label: "week" },
 ];
 
-const popularFilters = [
+const popularFilters: FilterProps[] = [
   { type: "movie", label: "movie" },
   { type: "tv", label: "tv" },
 ];

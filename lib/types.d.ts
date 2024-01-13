@@ -3,6 +3,11 @@ export interface MediaQuery {
   results: MovieProps[] | TvResultsProps[];
 }
 
+export interface FilterProps {
+  type: string;
+  label: string;
+}
+
 export interface DataProps {
   page: number;
   results: MovieProps[] | TvResultsProps[] | PersonProps[] | any;

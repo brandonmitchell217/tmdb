@@ -8,9 +8,18 @@ import CarouselHeader from "../CarouselHeader";
 import MediaCarousel from "../MediaCarousel";
 import { dummyArr } from "@/lib/util";
 import CardSkeleton from "@/components/Media/CardSkeleton";
+import { FilterProps } from "@/lib/types";
 
-export default function PopularCarousel({ title, filters, id }: any) {
-  const [isFilter, setIsFilter] = useState(filters[0].type);
+export default function PopularCarousel({
+  title,
+  filters,
+  id,
+}: {
+  title: string;
+  filters: FilterProps[];
+  id: string;
+}) {
+  const [isFilter, setIsFilter] = useState<string>(filters[0].type);
   const { data, error, isLoading } = useGetDiscoverQuery(isFilter);
 
   // console.log(data);
