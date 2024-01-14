@@ -10,7 +10,7 @@ export default function CarouselHeader({
   id,
 }: {
   title: string;
-  filters?: FilterProps[] | any;
+  filters?: FilterProps[] | undefined;
   setIsFilter?: any;
   id: string;
 }) {
@@ -23,15 +23,15 @@ export default function CarouselHeader({
           <div className="flex gap-4 items-center">
             <button
               className="bg-green-600 text-white px-8 py-1 rounded-3xl capitalize"
-              onClick={() => setIsFilter(filters[0].label)}
+              onClick={() => setIsFilter(filters && filters[0].label)}
             >
-              {filters[0].label}
+              {filters && filters[0].label}
             </button>
             <button
               className="bg-green-300 text-black px-8 py-1 rounded-3xl capitalize"
-              onClick={() => setIsFilter(filters[1].label)}
+              onClick={() => setIsFilter(filters && filters[1].label)}
             >
-              {filters[1].label}
+              {filters && filters[1].label}
             </button>
           </div>
         ) : null}
