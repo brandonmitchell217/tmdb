@@ -17,7 +17,7 @@ export default function MediaCarousel({
   title?: string;
   data: DataProps["results"];
   type: string;
-  filter?: any;
+  filter?: FilterProps["label"];
   className?: string;
   id?: string;
 }) {
