@@ -66,3 +66,12 @@
     grid-template-columns: repeat(auto-fit, minmax(203px, auto));
   }
 }
+
+.swiper-button-prev {
+  left: 6% !important;
+  transform: translateX(-6%) !important;
+}
+.swiper-button-next {
+  right: 6% !important;
+  transform: translateX(-6%) !important;
+}

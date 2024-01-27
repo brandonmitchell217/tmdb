@@ -9,7 +9,7 @@ import { MovieProps } from "@/lib/types";
 
 export default function NowPlayingCarousel({ data }: { data: MovieProps[] }) {
   return (
-    <section className="h-[65vh] w-full relative landing">
+    <section className="h-[75vh] w-full relative landing">
       <Search />
       <Swiper
         spaceBetween={30}
@@ -18,9 +18,7 @@ export default function NowPlayingCarousel({ data }: { data: MovieProps[] }) {
           delay: 10000,
           disableOnInteraction: false,
         }}
-        pagination={{
-          clickable: true,
-        }}
+        loop={true}
         navigation={true}
         modules={[Autoplay, Navigation]}
         className="mySwiper relative h-full w-full"
@@ -35,8 +33,7 @@ export default function NowPlayingCarousel({ data }: { data: MovieProps[] }) {
               src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
               alt={item.title}
               className="object-cover"
-              fill
-              sizes="100vw"
+              fill={true}
             />
             <div className="container h-full w-full relative z-10 py-8 flex flex-col justify-end">
               <Link href={`/movie/${item.id}`} className="text-white text-xl">

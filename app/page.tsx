@@ -20,21 +20,7 @@ export default async function Home() {
   return (
     <main className="pb-20">
       <div className="text-white space-y-20">
-        <Landing />
-
-        {session?.user?.name ? (
-          <div className="container space-y-2 text-center">
-            <h1 className="text-4xl font-bold">
-              Welcome {session?.user?.name}
-            </h1>
-            <p>Find new movies or shows!</p>
-          </div>
-        ) : (
-          <div className="container space-y-2 text-center">
-            <h1 className="text-4xl font-bold ">Welcome</h1>
-            <p>You should sign in!</p>
-          </div>
-        )}
+        <Landing session={session} />
 
         <UpcomingCarousel title="Upcoming Movies" id="upcoming_movies" />
         <TrendingCarousel

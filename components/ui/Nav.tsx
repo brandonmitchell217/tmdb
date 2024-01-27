@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import React, { useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import NavMenu from "./NavMenu";
@@ -33,10 +34,12 @@ export default function Nav() {
 
             <div className="flex items-center gap-2">
               {session.user?.image ? (
-                <img
+                <Image
                   src={session.user?.image}
                   alt={`${session.user?.name} profile image`}
                   className="w-7 h-7 rounded-full"
+                  height={28}
+                  width={28}
                 />
               ) : (
                 <div className="w-7 h-7 bg-slate-400 rounded-full"></div>
@@ -61,10 +64,12 @@ export default function Nav() {
 
             <div className="flex items-center gap-2">
               {session.user?.image ? (
-                <img
+                <Image
                   src={session.user?.image}
                   alt={`${session.user?.name} profile image`}
                   className="w-7 h-7 rounded-full"
+                  height={28}
+                  width={28}
                 />
               ) : (
                 <div className="w-7 h-7 bg-slate-400 rounded-full"></div>
