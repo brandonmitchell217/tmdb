@@ -32,7 +32,7 @@ export default function PopularCarousel({
         setIsFilter={setIsFilter}
         id={id}
       />
-      {isLoading && (
+      {isLoading ? (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-5 gap-y-10">
           {dummyArr.slice(0, 5).map((i) => (
             <div key={i}>
@@ -40,15 +40,22 @@ export default function PopularCarousel({
             </div>
           ))}
         </div>
-      )}
-      {!error && data ? (
+      ) : (
         <MediaCarousel
           data={data.results}
           type={isFilter}
           filter={isFilter}
           id={id}
         />
-      ) : null}
+      )}
+      {/* {!error && data ? (
+        <MediaCarousel
+          data={data.results}
+          type={isFilter}
+          filter={isFilter}
+          id={id}
+        />
+      ) : null} */}
     </section>
   );
 }

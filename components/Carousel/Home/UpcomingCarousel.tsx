@@ -25,7 +25,7 @@ export default function UpcomingCarousel({
   return (
     <section className="container">
       <CarouselHeader title={title} id={id} />
-      {isLoading && (
+      {isLoading ? (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-5 gap-y-10">
           {dummyArr.slice(0, 5).map((i) => (
             <div key={i}>
@@ -33,8 +33,10 @@ export default function UpcomingCarousel({
             </div>
           ))}
         </div>
+      ) : (
+        <MediaCarousel data={data.results} type={"movie"} id={id} />
       )}
-      {!error && data ? (
+      {/* {!error && data ? (
         //   <MediaCarousel
         //     data={data.results}
         //     type={'movie'}
@@ -42,7 +44,7 @@ export default function UpcomingCarousel({
         //     id={id}
         //   />
         <MediaCarousel data={data.results} type={"movie"} id={id} />
-      ) : null}
+      ) : null} */}
     </section>
   );
 }
