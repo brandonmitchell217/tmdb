@@ -16,7 +16,7 @@ export default function CarouselHeader({
 }) {
   return (
     <div className="flex justify-between items-center py-4">
-      <div className="flex gap-8 items-center">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-8 md:items-center">
         <h2 className="text-4xl capitalize">{title}</h2>
 
         {filters || setIsFilter ? (

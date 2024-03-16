@@ -31,14 +31,14 @@ export default function TvHeader({ id }: { id: string }) {
       ) : (
         <section className="py-16">
           <div className="container">
-            <div className="flex gap-14">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-14">
               <div>
                 <Image
                   src={`${IMG_PATH}${data.poster_path}`}
                   alt={`${data.title} poster`}
                   width={300}
                   height={450}
-                  className="rounded-md"
+                  className="rounded-md m-auto"
                   priority={true}
                 />
               </div>
