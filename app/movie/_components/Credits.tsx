@@ -30,7 +30,7 @@ export default function Credits({ id }: { id: string }) {
         <section className="container space-y-12">
           <div className="space-y-4">
             <h2 className="font-semibold text-2xl">Cast</h2>
-            <div className="grid grid-cols-5 px-8">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-0">
               {cast?.slice(0, 5).map((person: PersonProps, index: number) => (
                 <Link
                   key={index}
@@ -58,7 +58,7 @@ export default function Credits({ id }: { id: string }) {
           </div>
           <div className="space-y-4">
             <h2 className="font-semibold text-2xl">Crew</h2>
-            <div className="grid grid-cols-5 px-8">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-0">
               {crew?.slice(0, 5).map((person: PersonProps, index: number) => (
                 <div
                   key={index}

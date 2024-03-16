@@ -26,7 +26,7 @@ export default function PersonPage({ id }: { id: string }) {
           </div>
         </div>
       ) : (
-        <div className="flex gap-14">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-14">
           <div>
             <Image
               src={
@@ -37,7 +37,7 @@ export default function PersonPage({ id }: { id: string }) {
               alt={`${person.name} profile image`}
               width={300}
               height={450}
-              className="rounded-md"
+              className="rounded-md m-auto"
             />
           </div>
           <div className="flex-1 space-y-3">
