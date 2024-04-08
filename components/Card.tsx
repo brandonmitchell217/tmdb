@@ -13,6 +13,15 @@ interface Props {
 export default function Card({ data, type }: Props) {
   const image = data.poster_path ? data.poster_path : data.backdrop_path;
 
+  if (!type) {
+    if (data.media_type === "movie") {
+      type = "movie";
+    }
+    if (data.media_type === "tv") {
+      type = "tv";
+    }
+  }
+
   // console.log(data);
 
   return (
