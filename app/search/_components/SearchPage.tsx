@@ -6,7 +6,7 @@ import React from "react";
 
 export default function SearchPage({ query }: { query: DataProps }) {
   const results = query.results;
-  // console.log(query);
+
   return (
     <div className="py-24 flex flex-col items-center">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10">
